@@ -1,4 +1,5 @@
 let cookies = 0;
+let cookiesInTotal = 0;
 
 const multiplierCookies = {
     level1: 1,
@@ -36,7 +37,6 @@ const autoclickerLevel = {
     level7: 8,
     level8: 9,
     level9: 10,
-    level10: 10,
 }
 
 const autoclickerTime = {
@@ -71,11 +71,13 @@ let autoclickInterval;
 
 function UpdateCookieCounter() {
     document.getElementById("cookies").innerHTML = `${cookies} cookies`;
+    document.getElementById("cookiesInTotal").innerHTML = `${cookiesInTotal} cookies in total`;
     document.title = `${cookies} cookies - Clicker Spil`;
 }
 
 function ClickOnCookie() {
     cookies += cookieMultiplier;
+    cookiesInTotal += cookieMultiplier;
     UpdateCookieCounter();
 }
 
