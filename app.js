@@ -27,6 +27,7 @@ const multiplierCookiePrice = {
 }
 
 const autoclickerLevel = {
+    level0: 0,
     level1: 1,
     level2: 2,
     level3: 3,
@@ -36,7 +37,6 @@ const autoclickerLevel = {
     level7: 7,
     level8: 8,
     level9: 9,
-    level10: 10,
 }
 
 const autoclickerTime = {
@@ -66,7 +66,7 @@ const autoclickerPrice = {
 }
 
 let cookieMultiplier = multiplierCookies.level1;
-let clickPerSecond = autoclickerLevel.level1;
+let clickPerSecond = autoclickerLevel.level0;
 let autoclickInterval;
 
 function UpdateCookieCounter() {
@@ -127,16 +127,16 @@ function MultiplierCookieStore() {
 
 function AutoclickerStore() {
     const autoclickerLevels = [
-        { level: autoclickerLevel.level1, price: autoclickerPrice.level1Price, time: autoclickerTime.level1Time, nextLevel: autoclickerLevel.level1, nextButtonText: "2 x Hastighed" },
-        { level: autoclickerLevel.level2, price: autoclickerPrice.level2Price, time: autoclickerTime.level2Time, nextLevel: autoclickerLevel.level2, nextButtonText: "3 x Hastighed" },
-        { level: autoclickerLevel.level3, price: autoclickerPrice.level3Price, time: autoclickerTime.level3Time, nextLevel: autoclickerLevel.level3, nextButtonText: "4 x Hastighed" },
-        { level: autoclickerLevel.level4, price: autoclickerPrice.level4Price, time: autoclickerTime.level4Time, nextLevel: autoclickerLevel.level4, nextButtonText: "5 x Hastighed" },
-        { level: autoclickerLevel.level5, price: autoclickerPrice.level5Price, time: autoclickerTime.level5Time, nextLevel: autoclickerLevel.level5, nextButtonText: "6 x Hastighed" },
-        { level: autoclickerLevel.level6, price: autoclickerPrice.level6Price, time: autoclickerTime.level6Time, nextLevel: autoclickerLevel.level6, nextButtonText: "7 x Hastighed" },
-        { level: autoclickerLevel.level7, price: autoclickerPrice.level7Price, time: autoclickerTime.level7Time, nextLevel: autoclickerLevel.level7, nextButtonText: "8 x Hastighed" },
-        { level: autoclickerLevel.level8, price: autoclickerPrice.level8Price, time: autoclickerTime.level8Time, nextLevel: autoclickerLevel.level8, nextButtonText: "9 x Hastighed" },
-        { level: autoclickerLevel.level9, price: autoclickerPrice.level9Price, time: autoclickerTime.level9Time, nextLevel: autoclickerLevel.level9, nextButtonText: "10 x Hastighed" },
-        { level: autoclickerLevel.level10, price: autoclickerPrice.level10Price, time: autoclickerTime.level10Time, nextLevel: autoclickerLevel.level10, nextButtonText: "Maxed" },
+        { level: autoclickerLevel.level0, price: autoclickerPrice.level1Price, time: autoclickerTime.level1Time, nextLevel: autoclickerLevel.level1, nextButtonText: "2 x Hastighed" },
+        { level: autoclickerLevel.level1, price: autoclickerPrice.level2Price, time: autoclickerTime.level2Time, nextLevel: autoclickerLevel.level2, nextButtonText: "3 x Hastighed" },
+        { level: autoclickerLevel.level2, price: autoclickerPrice.level3Price, time: autoclickerTime.level3Time, nextLevel: autoclickerLevel.level3, nextButtonText: "4 x Hastighed" },
+        { level: autoclickerLevel.level3, price: autoclickerPrice.level4Price, time: autoclickerTime.level4Time, nextLevel: autoclickerLevel.level4, nextButtonText: "5 x Hastighed" },
+        { level: autoclickerLevel.level4, price: autoclickerPrice.level5Price, time: autoclickerTime.level5Time, nextLevel: autoclickerLevel.level5, nextButtonText: "6 x Hastighed" },
+        { level: autoclickerLevel.level5, price: autoclickerPrice.level6Price, time: autoclickerTime.level6Time, nextLevel: autoclickerLevel.level6, nextButtonText: "7 x Hastighed" },
+        { level: autoclickerLevel.level6, price: autoclickerPrice.level7Price, time: autoclickerTime.level7Time, nextLevel: autoclickerLevel.level7, nextButtonText: "8 x Hastighed" },
+        { level: autoclickerLevel.level7, price: autoclickerPrice.level8Price, time: autoclickerTime.level8Time, nextLevel: autoclickerLevel.level8, nextButtonText: "9 x Hastighed" },
+        { level: autoclickerLevel.level8, price: autoclickerPrice.level9Price, time: autoclickerTime.level9Time, nextLevel: autoclickerLevel.level9, nextButtonText: "10 x Hastighed" },
+        { level: autoclickerLevel.level9, price: autoclickerPrice.level10Price, time: autoclickerTime.level10Time, nextLevel: autoclickerLevel.level10, nextButtonText: "Maxed" },
     ];
 
     for (let index in autoclickerLevels) {
@@ -148,7 +148,7 @@ function AutoclickerStore() {
                 console.log(3);
                 cookies -= level.price;
                 document.getElementById("autoclicker").innerHTML = level.nextButtonText;
-                clickPerSecond = level.level;
+                clickPerSecond++;
                 console.log(clickPerSecond);
                 AutoclickOnCookie(level.time);
             }
