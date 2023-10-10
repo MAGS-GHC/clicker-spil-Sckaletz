@@ -26,16 +26,16 @@ const multiplierCookiePrice = {
 }
 
 const autoclickerLevel = {
-    level0: 0,
-    level1: 1,
-    level2: 2,
-    level3: 3,
-    level4: 4,
-    level5: 5,
-    level6: 6,
-    level7: 7,
-    level8: 8,
-    level9: 9,
+    level0: 1,
+    level1: 2,
+    level2: 3,
+    level3: 4,
+    level4: 5,
+    level5: 6,
+    level6: 7,
+    level7: 8,
+    level8: 9,
+    level9: 10,
     level10: 10,
 }
 
@@ -65,8 +65,6 @@ const autoclickerPrice = {
     level10Price: 1000000000,
 }
 
-
-
 let cookieMultiplier = multiplierCookies.level1;
 let clickPerSecond = autoclickerLevel.level0;
 let autoclickInterval;
@@ -82,17 +80,19 @@ function ClickOnCookie() {
 }
 
 function AutoclickOnCookie(interval) {
+    console.log("Interval: " + interval);
     if (autoclickInterval) {
         clearInterval(autoclickInterval);
     }
-    autoclickInterval = setInterval(Autoclick, interval);
+    
     function Autoclick() {
+        console.log("clickspersecond: " + clickPerSecond);
         for (let i = 0; i < clickPerSecond; i++) {
             ClickOnCookie();
         }
     }
+    autoclickInterval = setInterval(Autoclick, interval);
 }
-
 
 function MultiplierCookieStore() {
     const multiplierLevels = [
