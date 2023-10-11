@@ -168,4 +168,4 @@ function AutoclickerStore() {
     }
 }
 
-setInterval(UpdateCookieCounter, 100);
+setInterval(UpdateCookieCounter, 100); // Opdaterer siden jævnligt for at sikre, at opgraderingerne ikke er tilgængelige, inden spillet går i gang
