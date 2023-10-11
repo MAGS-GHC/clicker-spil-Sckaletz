@@ -167,3 +167,5 @@ function AutoclickerStore() {
         continue;
     }
 }
+
+setInterval(UpdateCookieCounter, 100);
