@@ -161,7 +161,8 @@ function AutoclickerStore() {
                 labelOnAutoclickButton = level.nextButtonLabel;
                 document.getElementById("autoclicker").innerHTML = level.nextButtonLabel;
                 AutoclickOnCookie(level.nextUprade, level.price); // Fastsætter nyt level
-                window.alert("Du opgraderede din autoclicker!"); // Giver achievement / confirmation popup ved køb
+                popUp();
+                //window.alert("Du opgraderede din autoclicker!"); // Giver achievement / confirmation popup ved køb
             }
             break;
         }
@@ -179,4 +180,4 @@ function popUp(){
       });
 }
 
-setInterval(UpdateCookieCounter, 100); // Opdaterer siden jævnligt for at sikre, at opgraderingerne ikke er tilgængelige, inden spillet går i gang
+setInterval(UpdateCookieCounter, 100) // Opdaterer siden kort efter den bliver loadet, så knapper bliver låst fra start, siden man ingen cookies vil have
