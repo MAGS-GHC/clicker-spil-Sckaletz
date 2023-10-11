@@ -142,7 +142,8 @@ function MultiplierCookieStore() {
                 document.getElementById("cookieknap").innerHTML = level.nextButtonText;
                 cookieMultiplier = level.nextLevel; // Fastsætter nyt level
                 UpdateCookieCounter(level.price); // Opdaterer counter
-                window.alert("Du opgraderede antal cookies pr. klik!"); // Giver achievement / confirmation popup ved køb
+                popUp();
+                //window.alert("Du opgraderede antal cookies pr. klik!"); // Giver achievement / confirmation popup ved køb
             }
             break;
         }
@@ -166,6 +167,16 @@ function AutoclickerStore() {
         }
         continue;
     }
+}
+
+// Pop-up ved opgradering
+function popUp(){
+    document.querySelector("#cookieknap").addEventListener("click",function(){
+        document.querySelector(".popup").classList.add("active");
+      });
+      document.querySelector(".popup .close-btn").addEventListener("click",function(){
+        document.querySelector(".popup").classList.remove("active");
+      });
 }
 
 setInterval(UpdateCookieCounter, 100); // Opdaterer siden jævnligt for at sikre, at opgraderingerne ikke er tilgængelige, inden spillet går i gang
