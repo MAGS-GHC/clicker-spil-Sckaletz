@@ -115,11 +115,10 @@ function UpdateCookieCounter() {
 function ClickOnCookie() {
     cookies += cookieMultiplier; // tilføj antal cookies til tæller (cookieMultiplier angiver det level og antal cookies, vi har købt)
     cookiesInTotal += cookieMultiplier; // tilføj antal cookies til total tæller (cookieMultiplier angiver det level og antal cookies, vi har købt)
-    if (cookies > highscore){
+    if (cookies > highscore){ // vis højeste antal cookies vi har været oppe på
         highscore = cookies;
         document.getElementById("highscore").innerHTML = `${highscore} highscore`;
     }
-    console.log(highscore);
     UpdateCookieCounter();
 }
 
