@@ -1,6 +1,7 @@
 // Definer variabler til antal cookies og cookies i alt
 let cookies = 0;
 let cookiesInTotal = 0;
+let highscore = 0;
 
 // Definer de forskellige opgraderinger til cookies delen
 const multiplierCookies = {
@@ -114,6 +115,11 @@ function UpdateCookieCounter() {
 function ClickOnCookie() {
     cookies += cookieMultiplier; // tilføj antal cookies til tæller (cookieMultiplier angiver det level og antal cookies, vi har købt)
     cookiesInTotal += cookieMultiplier; // tilføj antal cookies til total tæller (cookieMultiplier angiver det level og antal cookies, vi har købt)
+    if (cookies > highscore){
+        highscore = cookies;
+        document.getElementById("highscore").innerHTML = `${highscore} highscore`;
+    }
+    console.log(highscore);
     UpdateCookieCounter();
 }
 

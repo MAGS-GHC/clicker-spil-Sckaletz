@@ -75,7 +75,21 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 65%;
+  top: 76%;
+  left: 50%;
+  padding-top: 8%;
+  color: ghostwhite;
+  font-weight: bold;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0px 0px 6px black;
+}
+
+#highscore {
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 70%;
   left: 50%;
   padding-top: 8%;
   color: ghostwhite;
